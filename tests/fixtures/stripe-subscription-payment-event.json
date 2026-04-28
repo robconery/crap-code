@@ -1,0 +1,17 @@
+{
+  "id": "evt_test_invoice_001",
+  "object": "event",
+  "type": "invoice.payment_succeeded",
+  "data": {
+    "object": {
+      "id": "in_test_001",
+      "object": "invoice",
+      "customer": "cus_test_001",
+      "customer_email": "subscriber@example.com",
+      "customer_name": "Jane Subscriber",
+      "subscription": "sub_test_001",
+      "billing_reason": "subscription_create",
+      "status": "paid"
+    }
+  }
+}

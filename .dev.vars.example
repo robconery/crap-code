@@ -1,0 +1,20 @@
+# Local development secrets — copy to .dev.vars and fill in real values.
+# .dev.vars is git-ignored and must NEVER be committed.
+# In production these are Wrangler secrets (wrangler secret put <NAME>).
+
+# Stripe webhook signing secret — from Stripe Dashboard > Webhooks > Signing secret
+STRIPE_WEBHOOK_SECRET=whsec_
+
+# Stripe API key (restricted key with read access to subscriptions and customers)
+STRIPE_API_KEY=sk_test_
+
+# Resend API key — from resend.com dashboard
+RESEND_API_KEY=re_
+
+# Firebase service account JSON — stringify the downloaded service account JSON file
+# Example: FIREBASE_SERVICE_ACCOUNT={"type":"service_account","project_id":"..."}
+FIREBASE_SERVICE_ACCOUNT=
+
+# Firebase Storage bucket name — from Firebase Console > Storage > bucket URL
+# Example: your-project.appspot.com
+FIREBASE_STORAGE_BUCKET=

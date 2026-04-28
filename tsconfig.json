@@ -1,0 +1,33 @@
+{
+  "compilerOptions": {
+    // Target the Cloudflare Worker runtime (modern V8)
+    "target": "ES2022",
+    "module": "ES2022",
+    "moduleResolution": "bundler",
+    "lib": ["ES2022"],
+
+    // Strict mode — every flag that catches bugs at compile time
+    "strict": true,
+    "noUncheckedIndexedAccess": true,
+    "noImplicitOverride": true,
+    "exactOptionalPropertyTypes": true,
+    "noUncheckedSideEffectImports": true,
+
+    // Emit settings — Wrangler handles the actual build
+    "noEmit": true,
+    "skipLibCheck": true,
+
+    // Absolute import aliases — no deep relative chains
+    "baseUrl": ".",
+    "paths": {
+      "@/lib/*": ["./lib/*"],
+      "@/tests/*": ["./tests/*"],
+      "@/src/*": ["./src/*"]
+    },
+
+    // Cloudflare Worker types
+    "types": ["@cloudflare/workers-types"]
+  },
+  "include": ["src/**/*", "lib/**/*"],
+  "exclude": ["node_modules", ".wrangler", "dist"]
+}

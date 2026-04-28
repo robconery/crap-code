@@ -1,0 +1,12 @@
+[
+	{
+		"slug": "big-cool-product",
+		"offer": "Something So Amazing",
+		"downloads": [
+			"amazing-thing.zip"
+		],
+		"skus": [
+			"amazing-thing"
+		]
+	}
+]

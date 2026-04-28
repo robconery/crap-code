@@ -1,0 +1,394 @@
+{
+  "name": "stripe-webhook-1",
+  "branch": "sprint/stripe-webhook-1",
+  "phase": "final-review",
+  "createdAt": "2026-04-22T21:57:31.056Z",
+  "currentWave": 5,
+  "tasks": [
+    {
+      "id": "task-1",
+      "title": "Project Scaffolding",
+      "story": "Foundation for all stories",
+      "wave": 1,
+      "gate": "done",
+      "attempts": 1,
+      "strikes": [],
+      "gates": {
+        "builder": "pass",
+        "tester": "pass",
+        "reviewer": "pass",
+        "security": "pass",
+        "verify": "pass",
+        "commit": "pass"
+      },
+      "startedAt": "2026-04-22T22:00:00.000Z",
+      "files": [
+        "package.json",
+        "tsconfig.json",
+        "tsconfig.test.json",
+        "wrangler.toml",
+        "biome.json",
+        ".dev.vars.example",
+        ".gitignore",
+        "src/index.ts",
+        "drizzle.config.ts"
+      ],
+      "commitSha": "bb53baaf3c2e8b448ff76312c1e8d89db1c4fdfd",
+      "completedAt": "2026-04-22T22:38:53.518Z"
+    },
+    {
+      "id": "task-2",
+      "title": "Database Schema + Drizzle Client",
+      "story": "Story 2, 3, 5, 6, 7",
+      "wave": 2,
+      "gate": "done",
+      "attempts": 1,
+      "strikes": [],
+      "gates": {
+        "builder": "pass",
+        "tester": "pass",
+        "reviewer": "pass",
+        "security": "pass",
+        "verify": "pass",
+        "commit": "pass"
+      },
+      "files": [
+        "lib/infra/db/schema/pings.ts",
+        "lib/infra/db/schema/users.ts",
+        "lib/infra/db/schema/orders.ts",
+        "lib/infra/db/schema/authorizations.ts",
+        "lib/infra/db/schema/fulfillment-orders.ts",
+        "lib/infra/db/schema/subscriptions.ts",
+        "lib/infra/db/index.ts",
+        "lib/infra/db/client.ts",
+        "drizzle.config.ts"
+      ],
+      "startedAt": "2026-04-22T23:12:29.045Z",
+      "commitSha": "1c79dcbec08ae7fd2115c0522ca316b8adc1aa93",
+      "completedAt": "2026-04-22T23:13:09.895Z"
+    },
+    {
+      "id": "task-3",
+      "title": "Config, Logger, and Error Classes",
+      "story": "Story 8, all stories",
+      "wave": 2,
+      "gate": "done",
+      "attempts": 1,
+      "strikes": [],
+      "gates": {
+        "builder": "pass",
+        "tester": "pass",
+        "reviewer": "pass",
+        "security": "pass",
+        "verify": "pass",
+        "commit": "pass"
+      },
+      "files": [
+        "lib/infra/config.ts",
+        "lib/infra/logger.ts",
+        "lib/errors/domain.error.ts",
+        "lib/errors/stripe-verification.error.ts",
+        "lib/errors/fulfillment.error.ts",
+        "lib/errors/email-send.error.ts",
+        "lib/errors/subscription.error.ts"
+      ],
+      "startedAt": "2026-04-22T23:12:29.046Z",
+      "commitSha": "daae32b878a1653da4ca8e7db5d4125dc14bff24",
+      "completedAt": "2026-04-22T23:13:12.167Z"
+    },
+    {
+      "id": "task-4",
+      "title": "Stripe Verifier Adapter + Webhook Contracts",
+      "story": "Story 1, all stories (input validation)",
+      "wave": 3,
+      "gate": "done",
+      "attempts": 1,
+      "strikes": [],
+      "gates": {
+        "builder": "pass",
+        "tester": "pass",
+        "reviewer": "pass",
+        "security": "pass",
+        "verify": "pass",
+        "commit": "pass"
+      },
+      "files": [
+        "lib/infra/stripe/stripe-verifier.adapter.ts",
+        "lib/contracts/stripe-webhook.schema.ts",
+        "tests/lib/infra/stripe/stripe-verifier.adapter.test.ts",
+        "tests/fixtures/stripe-checkout-event.json",
+        "tests/fixtures/stripe-subscription-payment-event.json",
+        "tests/fixtures/stripe-subscription-cancel-event.json",
+        "tests/fixtures/stripe-subscription-update-event.json"
+      ],
+      "startedAt": "2026-04-22T23:17:49.008Z",
+      "commitSha": "3d2145fafebfd33dc796a5664bece662d0dcd0f2",
+      "completedAt": "2026-04-22T23:18:26.821Z"
+    },
+    {
+      "id": "task-5",
+      "title": "Email Sender + File Storage Adapters",
+      "story": "Story 4",
+      "wave": 3,
+      "gate": "done",
+      "attempts": 1,
+      "strikes": [],
+      "gates": {
+        "builder": "pass",
+        "tester": "pass",
+        "reviewer": "pass",
+        "security": "pass",
+        "verify": "pass",
+        "commit": "pass"
+      },
+      "files": [
+        "lib/infra/email/email-sender.port.ts",
+        "lib/infra/email/resend-email.adapter.ts",
+        "lib/infra/storage/file-storage.port.ts",
+        "lib/infra/storage/firebase-file-storage.adapter.ts",
+        "tests/fakes/fake-email-sender.ts",
+        "tests/fakes/fake-file-storage.ts"
+      ],
+      "startedAt": "2026-04-22T23:17:49.009Z",
+      "commitSha": "e552e345089b4b9611aa2c9dfdc3dba45d38d559",
+      "completedAt": "2026-04-22T23:18:29.626Z"
+    },
+    {
+      "id": "task-6",
+      "title": "Ping Commands",
+      "story": "Story 2 all ACs, Story 8 AC2 AC3",
+      "wave": 4,
+      "gate": "done",
+      "attempts": 1,
+      "strikes": [],
+      "gates": {
+        "builder": "pass",
+        "tester": "pass",
+        "reviewer": "pass",
+        "security": "pass",
+        "verify": "pass",
+        "commit": "pass"
+      },
+      "files": [
+        "lib/ping/save-ping.command.ts",
+        "lib/ping/update-ping-status.command.ts",
+        "tests/lib/ping/save-ping.command.test.ts",
+        "tests/lib/ping/update-ping-status.command.test.ts"
+      ],
+      "startedAt": "2026-04-22T23:22:26.489Z",
+      "commitSha": "01f53b6ec73b76ff3f4a427ebd3acdf38f9b0b44",
+      "completedAt": "2026-04-22T23:22:29.150Z"
+    },
+    {
+      "id": "task-7",
+      "title": "User Commands + Query",
+      "story": "Story 3 AC4, Story 5 AC4, Story 6 AC1",
+      "wave": 5,
+      "gate": "done",
+      "attempts": 1,
+      "strikes": [],
+      "gates": {
+        "builder": "pass",
+        "tester": "pass",
+        "reviewer": "pass",
+        "security": "pass",
+        "verify": "pass",
+        "commit": "pass"
+      },
+      "files": [
+        "lib/users/upsert-user.command.ts",
+        "lib/users/get-user-by-email.query.ts",
+        "tests/lib/users/upsert-user.command.test.ts"
+      ],
+      "startedAt": "2026-04-22T23:25:41.949Z",
+      "commitSha": "572e2c78d5e5f7d51ccefc0729ea4aa914a3da37",
+      "completedAt": "2026-04-22T23:25:53.245Z"
+    },
+    {
+      "id": "task-8",
+      "title": "FulfillOrderCommand + Query",
+      "story": "Story 3 all ACs, Story 5 all ACs",
+      "wave": 5,
+      "gate": "done",
+      "attempts": 1,
+      "strikes": [],
+      "gates": {
+        "builder": "pass",
+        "tester": "pass",
+        "reviewer": "pass",
+        "security": "pass",
+        "verify": "pass",
+        "commit": "pass"
+      },
+      "files": [
+        "lib/orders/fulfill-order.command.ts",
+        "lib/orders/get-order-by-checkout-id.query.ts",
+        "tests/lib/orders/fulfill-order.command.test.ts"
+      ],
+      "startedAt": "2026-04-22T23:25:41.949Z",
+      "commitSha": "d69f6f13d48be0d90e62a3f3a117325ab299c9c7",
+      "completedAt": "2026-04-23T01:30:28.747Z"
+    },
+    {
+      "id": "task-9",
+      "title": "Send Fulfillment Email Command",
+      "story": "Story 4 all ACs",
+      "wave": 6,
+      "gate": "done",
+      "attempts": 0,
+      "strikes": [],
+      "gates": {
+        "builder": "pass",
+        "tester": "pass",
+        "reviewer": "pass",
+        "security": "pass",
+        "verify": "pass",
+        "commit": "pass"
+      },
+      "files": [
+        "lib/email/send-fulfillment-email.command.ts",
+        "tests/lib/email/send-fulfillment-email.command.test.ts"
+      ],
+      "commitSha": "15663a15edf2d198d48c8faae884929d29d05d07",
+      "completedAt": "2026-04-23T01:39:21.133Z"
+    },
+    {
+      "id": "task-10",
+      "title": "Subscription Commands + Query",
+      "story": "Story 6 all ACs, Story 7 AC1-AC4",
+      "wave": 6,
+      "gate": "done",
+      "attempts": 0,
+      "strikes": [],
+      "gates": {
+        "builder": "pass",
+        "tester": "pass",
+        "reviewer": "pass",
+        "security": "pass",
+        "verify": "pass",
+        "commit": "pass"
+      },
+      "files": [
+        "lib/subscriptions/upsert-subscription.command.ts",
+        "lib/subscriptions/update-subscription-status.command.ts",
+        "lib/subscriptions/get-subscription-by-stripe-id.query.ts",
+        "tests/lib/subscriptions/upsert-subscription.command.test.ts",
+        "tests/lib/subscriptions/update-subscription-status.command.test.ts"
+      ],
+      "commitSha": "b5efdcee2fc1d8c9a6f78e22b78424474ca34c84",
+      "completedAt": "2026-04-23T01:39:23.745Z"
+    },
+    {
+      "id": "task-11",
+      "title": "WebhookRouter + OrderWebhookHandler",
+      "story": "Story 2 AC2/AC3/AC5, Story 3, Story 4, Story 5, Story 8 AC1/AC2",
+      "wave": 7,
+      "gate": "done",
+      "attempts": 0,
+      "strikes": [],
+      "gates": {
+        "builder": "pass",
+        "tester": "pass",
+        "reviewer": "pass",
+        "security": "pass",
+        "verify": "pass",
+        "commit": "pass"
+      },
+      "files": [
+        "lib/webhooks/webhook-handler.types.ts",
+        "lib/webhooks/webhook-router.ts",
+        "lib/webhooks/handlers/order-webhook.handler.ts",
+        "tests/lib/webhooks/webhook-router.test.ts",
+        "tests/lib/webhooks/handlers/order-webhook.handler.test.ts"
+      ],
+      "commitSha": "5f53581af0624501085dc33a764837887b6ea99f",
+      "completedAt": "2026-04-23T01:45:14.474Z"
+    },
+    {
+      "id": "task-12",
+      "title": "Subscription Webhook Handlers",
+      "story": "Story 6 all ACs, Story 7 all ACs",
+      "wave": 8,
+      "gate": "done",
+      "attempts": 0,
+      "strikes": [],
+      "gates": {
+        "builder": "pass",
+        "tester": "pass",
+        "reviewer": "pass",
+        "security": "pass",
+        "verify": "pass",
+        "commit": "pass"
+      },
+      "files": [
+        "lib/webhooks/handlers/subscription-payment.handler.ts",
+        "lib/webhooks/handlers/subscription-change.handler.ts",
+        "tests/lib/webhooks/handlers/subscription-payment.handler.test.ts",
+        "tests/lib/webhooks/handlers/subscription-change.handler.test.ts"
+      ],
+      "commitSha": "9cf155959d60cecb3b76103cf9e33d4d9f27bf73",
+      "completedAt": "2026-04-23T01:49:32.947Z"
+    },
+    {
+      "id": "task-13",
+      "title": "Route Handler + Composition Root",
+      "story": "Story 1 all ACs, Story 2 AC1, Story 8 AC3/AC4",
+      "wave": 9,
+      "gate": "done",
+      "attempts": 0,
+      "strikes": [],
+      "gates": {
+        "builder": "pass",
+        "tester": "pass",
+        "reviewer": "pass",
+        "security": "pass",
+        "verify": "pass",
+        "commit": "pass"
+      },
+      "files": [
+        "src/routes/webhook.ts",
+        "lib/composition-root.ts",
+        "src/index.ts",
+        "tests/routes/webhook.test.ts"
+      ],
+      "commitSha": "9999b7962b77086e5bb85c6bd69a43b3656a3be9",
+      "completedAt": "2026-04-23T01:55:35.290Z"
+    },
+    {
+      "id": "polish-1",
+      "title": "Test Refactor: createTestDb helper + BDD beforeEach/afterEach + config gap fix",
+      "story": "All stories — test quality, AC coverage unchanged",
+      "wave": 10,
+      "gate": "done",
+      "attempts": 0,
+      "strikes": [],
+      "gates": {
+        "builder": "pass",
+        "tester": "pass",
+        "reviewer": "pass",
+        "security": "pass",
+        "verify": "pass",
+        "commit": "pass"
+      },
+      "startedAt": "2026-04-22T00:00:00.000Z",
+      "files": [
+        "tests/helpers/create-test-db.ts",
+        "tests/lib/ping/save-ping.command.test.ts",
+        "tests/lib/ping/update-ping-status.command.test.ts",
+        "tests/lib/orders/fulfill-order.command.test.ts",
+        "tests/lib/users/upsert-user.command.test.ts",
+        "tests/lib/subscriptions/upsert-subscription.command.test.ts",
+        "tests/lib/subscriptions/update-subscription-status.command.test.ts",
+        "tests/lib/webhooks/handlers/order-webhook.handler.test.ts",
+        "tests/lib/webhooks/handlers/subscription-payment.handler.test.ts",
+        "tests/lib/webhooks/handlers/subscription-change.handler.test.ts",
+        "lib/infra/config.ts",
+        ".dev.vars.example",
+        "drizzle.config.ts",
+        "lib/infra/db/schema/index.ts"
+      ],
+      "commitSha": "5f58a17aad87bc941a4a991d2aa77940ae0cc855",
+      "completedAt": "2026-04-23T03:06:46.650Z"
+    }
+  ]
+}

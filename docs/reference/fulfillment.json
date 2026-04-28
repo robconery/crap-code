@@ -1,0 +1,15 @@
+{
+  "order_id": 1,
+  "date": "2024-04-05",
+  "sku": "imposter-single",
+  "email": "test@test.com",
+  "number": "BIGZ-XXXXXX",
+  "downloads": [
+    {
+      "name": "The Imposter's Handbook",
+      "file": "imposter-single.zip",
+      "size": "230Mb",
+      "location": "imposter-single.zip"
+    }
+  ]
+}

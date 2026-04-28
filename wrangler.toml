@@ -1,0 +1,12 @@
+name = "bigmachine-fulfillment"
+main = "src/index.ts"
+compatibility_date = "2025-04-01"
+compatibility_flags = ["nodejs_compat"]
+
+# D1 database binding — available as `env.DATABASE` in the Worker
+[[d1_databases]]
+binding = "DATABASE"
+database_name = "bigmachine-fulfillment"
+# Replace with your real D1 database id after running `wrangler d1 create bigmachine-fulfillment`
+database_id = "REPLACE_WITH_D1_DATABASE_ID"
+migrations_dir = "drizzle"

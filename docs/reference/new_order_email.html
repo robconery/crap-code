@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Your Order from bigmachine.io</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      background-color: #f4f4f4;
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+      font-size: 16px;
+      color: #333333;
+    }
+    .wrapper {
+      width: 100%;
+      background-color: #f4f4f4;
+      padding: 40px 0;
+    }
+    .container {
+      max-width: 600px;
+      margin: 0 auto;
+      background-color: #ffffff;
+      border-radius: 4px;
+      overflow: hidden;
+    }
+    .header {
+      background-color: #1a1a1a;
+      padding: 32px 40px;
+    }
+    .header h1 {
+      margin: 0;
+      font-size: 22px;
+      font-weight: 700;
+      color: #ffffff;
+      letter-spacing: -0.3px;
+    }
+    .header p {
+      margin: 6px 0 0;
+      font-size: 14px;
+      color: #999999;
+    }
+    .body {
+      padding: 40px;
+    }
+    .greeting {
+      font-size: 16px;
+      margin: 0 0 24px;
+      line-height: 1.5;
+      color: #333333;
+    }
+    .order-meta {
+      background-color: #f9f9f9;
+      border: 1px solid #e8e8e8;
+      border-radius: 4px;
+      padding: 16px 20px;
+      margin-bottom: 32px;
+      font-size: 14px;
+      color: #555555;
+    }
+    .order-meta strong {
+      color: #1a1a1a;
+    }
+    .section-label {
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      color: #999999;
+      margin: 0 0 12px;
+    }
+    .line-items {
+      border: 1px solid #e8e8e8;
+      border-radius: 4px;
+      overflow: hidden;
+      margin-bottom: 32px;
+    }
+    .line-item {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 16px 20px;
+      border-bottom: 1px solid #e8e8e8;
+    }
+    .line-item:last-child {
+      border-bottom: none;
+    }
+    .line-item-name {
+      font-size: 15px;
+      font-weight: 600;
+      color: #1a1a1a;
+    }
+    .line-item-type {
+      font-size: 12px;
+      color: #999999;
+      margin-top: 2px;
+    }
+    .line-item-price {
+      font-size: 15px;
+      font-weight: 600;
+      color: #1a1a1a;
+      white-space: nowrap;
+    }
+    .downloads {
+      margin-bottom: 32px;
+    }
+    .download-button {
+      display: block;
+      background-color: #1a1a1a;
+      color: #ffffff;
+      text-decoration: none;
+      padding: 14px 24px;
+      border-radius: 4px;
+      font-size: 14px;
+      font-weight: 600;
+      text-align: center;
+      margin-bottom: 10px;
+    }
+    .download-note {
+      font-size: 13px;
+      color: #999999;
+      line-height: 1.5;
+    }
+    .divider {
+      border: none;
+      border-top: 1px solid #e8e8e8;
+      margin: 32px 0;
+    }
+    .support {
+      font-size: 14px;
+      color: #555555;
+      line-height: 1.6;
+    }
+    .support a {
+      color: #1a1a1a;
+      font-weight: 600;
+    }
+    .footer {
+      background-color: #f9f9f9;
+      border-top: 1px solid #e8e8e8;
+      padding: 24px 40px;
+      text-align: center;
+    }
+    .footer p {
+      margin: 0;
+      font-size: 12px;
+      color: #aaaaaa;
+      line-height: 1.6;
+    }
+    .footer a {
+      color: #aaaaaa;
+    }
+  </style>
+</head>
+<body>
+  <div class="wrapper">
+    <div class="container">
+
+      <div class="header">
+        <h1>bigmachine.io</h1>
+        <p>Order Confirmation</p>
+      </div>
+
+      <div class="body">
+
+        <p class="greeting">
+          Thanks for your purchase. Your download is ready and waiting for you below.
+        </p>
+
+        <div class="order-meta">
+          <strong>Order:</strong> {{ORDER_NUMBER}}<br>
+          <strong>Date:</strong> {{ORDER_DATE}}<br>
+          <strong>Email:</strong> {{CUSTOMER_EMAIL}}
+        </div>
+
+        <!-- LINE ITEMS -->
+        <p class="section-label">What you ordered</p>
+        <div class="line-items">
+
+          <!-- Repeat this block for each line item -->
+          {{#each LINE_ITEMS}}
+          <div class="line-item">
+            <div>
+              <div class="line-item-name">{{PRODUCT_NAME}}</div>
+              <div class="line-item-type">{{PRODUCT_TYPE}}</div>
+            </div>
+            <div class="line-item-price">{{PRODUCT_PRICE}}</div>
+          </div>
+          {{/each}}
+
+        </div>
+
+        <!-- DOWNLOADS -->
+        <div class="downloads">
+          <p class="section-label">Your downloads</p>
+
+          <!-- Repeat this block for each downloadable item -->
+          {{#each DOWNLOADS}}
+          <a href="{{DOWNLOAD_URL}}" class="download-button">
+            Download {{PRODUCT_NAME}}
+          </a>
+          {{/each}}
+
+          <p class="download-note">
+            These links are unique to your order. Save this email so you can retrieve your files in the future. If a link expires, reply to this email and we will sort it out.
+          </p>
+        </div>
+
+        <hr class="divider">
+
+        <div class="support">
+          <p>Questions about your order? Reach out at <a href="mailto:rob@bigmachine.io">rob@bigmachine.io</a> and include your order number <strong>{{ORDER_NUMBER}}</strong>.</p>
+        </div>
+
+      </div>
+
+      <div class="footer">
+        <p>
+          &copy; {{YEAR}} bigmachine.io &nbsp;|&nbsp; <a href="https://bigmachine.io">bigmachine.io</a><br>
+          You received this because you placed an order at bigmachine.io.
+        </p>
+      </div>
+
+    </div>
+  </div>
+</body>
+</html>

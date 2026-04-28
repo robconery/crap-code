@@ -1,0 +1,24 @@
+{
+  "id": "evt_test_checkout_001",
+  "object": "event",
+  "type": "checkout.session.completed",
+  "data": {
+    "object": {
+      "id": "cs_test_ABCD1234",
+      "object": "checkout.session",
+      "customer": "cus_test_001",
+      "customer_email": "rob@example.com",
+      "customer_details": {
+        "name": "Rob Conery",
+        "email": "rob@example.com"
+      },
+      "amount_total": 3900,
+      "currency": "usd",
+      "metadata": {
+        "offer": "imposter-single",
+        "store": "bigmachine.io",
+        "slug": "imposter-single"
+      }
+    }
+  }
+}

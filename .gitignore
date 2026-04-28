@@ -1,0 +1,19 @@
+node_modules/
+.wrangler/
+dist/
+
+# Local secrets — never commit
+.dev.vars
+
+# Local SQLite databases
+*.sqlite
+*.sqlite-shm
+*.sqlite-wal
+
+# Local logs (sprint logs in docs/ ARE committed — they are the audit trail)
+*.log
+
+# OS noise
+.DS_Store
+.pi
+.wranger
